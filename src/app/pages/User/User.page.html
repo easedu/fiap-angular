@@ -1,6 +1,38 @@
 <div>
     <loading-component [show]="loading"></loading-component>
-    <button (click)="createUser()">
-        Criar
-    </button>
+
+    <div class="mdl-tabs__tab-bar">
+        <a href="user" class="mdl-tabs__tab is-active">Usuários</a>
+        <a href="user" class="mdl-tabs__tab">Criar</a>
+    </div>
+
+
+    <ul class="demo-list-icon mdl-list">
+        <li *ngFor="let user of users" class="mdl-list__item">
+            <span (click)="editUser(user)" class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon">person</i>
+                {{user.name}}
+            </span>
+        </li>
+    </ul>
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp card">
+        <form [formGroup]="userForm" (ngSubmit)="createUser()">
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="name" placeholder="Nome" formControlName="name" />
+                <br>
+                <input class="mdl-textfield__input" type="email" name="email" placeholder="E-mail"
+                    formControlName="email" />
+                <br>
+                <input class="mdl-textfield__input" type="number" name="age" placeholder="Idade"
+                    formControlName="age" />
+                <br>
+                <input class="mdl-textfield__input" type="tel" name="phone" placeholder="Telefone"
+                    formControlName="phone" />
+            </div>
+            <br>
+            <button class="mdl-button mdl-js-button mdl-button--primary" type="submit" [disabled]="!userForm.valid">
+                Criar
+            </button>
+        </form>
+    </div>
 </div>

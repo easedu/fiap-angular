@@ -10,6 +10,10 @@ const routes: Routes = [
     component: UserListPage
   },
   {
+    path: 'user',
+    component: UserPage
+  },
+  {
     path: 'user/:id',
     component: UserPage
   }

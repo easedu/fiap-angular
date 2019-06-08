@@ -1,0 +1,16 @@
+.demo-list-icon {
+    width: 300px;
+}
+
+.demo-card-wide > .mdl-card__menu {
+    color: #fff;
+}
+
+.card {
+    margin-left: 10px;
+    padding-left: 15px;
+}
+
+.card button {
+    text-align: center;
+}
